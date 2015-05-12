@@ -35,12 +35,6 @@ def onlineKMP(pattern, text):
             pass
     return result
 
-def permutation(string, output, r):
-    if (len(output) == r):
-        print output
-    else:
-        for i in range(string):
-            permutation(string, output + string[i], r)
 
 T = int(raw_input())
 for i in range(T):

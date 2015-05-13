@@ -51,8 +51,7 @@ for i in range(T):
         result += kmp
         maks = max(maks, kmp)
     wyn = maks - result/(dem *1.0)
-    printing = "{0:.6f}".format(round(wyn,6))
-    if printing[-1] == "0":
-        print "Case #" + str(i+1) + ": " + "{0:.6f}".format(round(wyn,6)).rstrip("0")+"0"
-    else:     
-        print "Case #" + str(i+1) + ": " + "{0:.6f}".format(round(wyn,6))
+    output = "{0:.6f}".format(round(wyn,6))
+     
+    printing = output.rstrip("0")+"0" if output[-1] == "0" else output
+    print "Case #" + str(i+1) + ": " + printing

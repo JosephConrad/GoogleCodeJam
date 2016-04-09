@@ -1,3 +1,7 @@
+/*
+ * Header file available here:
+ * https://github.com/JosephConrad/GoogleCodeJam/tree/master/2016
+ */
 #include "../../template.h"
 
 

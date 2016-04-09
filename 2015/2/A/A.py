@@ -16,20 +16,12 @@ def calc(grid, size1, size2, row):
 
 def hasNext(p, grid, column, row):
     posR, posC, direction = p
-    if direction in ['<', '^']:
-        decR, decC = [(0, -1),(-1, 0)][['<', '^'].index(direction)]
-        while posR >= 0 and posC >=0:
-            posR += decR
-            posC += decC
-            if grid[posR][posC] in directions:  
-                return True
-        return False
-    incR, incC = [(1, 0),(0, 1)][['v', '>'].index(direction)]
-    while posR < row and posC < column:
-         posR += incR
-         posC += incC
-         if grid[posR][posC] in directions:
-             return True
+    movR, movC, greater, smaller = [(0, -1, posC, -1),(-1, 0, posR, -1), (1, 0, row, posR), (0, 1, column, posC)][['<', '^', 'v', '>'].index(direction)]
+    while greater > smaller:
+        posR += movR
+        posC += movC
+        if grid[posR][posC] in directions:  
+            return True
     return False
 
 T = int(raw_input())

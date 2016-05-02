@@ -27,7 +27,7 @@ std::string solve(LL number) {
     while (allDigits(tab) == false) {
         num = multiplier * number;
         multiplier++;
-        int x = num;
+        LL x = num;
         while (x > 0) {
             tab[x % 10] = 1;
             x /= 10;
